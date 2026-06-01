@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BottomSheetShowcase() {
+fun EZBottomSheetShowcase() {
     var showSheet by remember { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState()
 

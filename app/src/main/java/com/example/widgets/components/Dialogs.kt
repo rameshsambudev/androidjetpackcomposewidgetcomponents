@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BasicAlertDialog(
+fun EZAlertDialog(
     showDialog: Boolean,
     onDismiss: () -> Unit,
     onConfirm: () -> Unit,
@@ -30,7 +30,7 @@ fun BasicAlertDialog(
 }
 
 @Composable
-fun DialogsShowcase() {
+fun EZDialogsShowcase() {
     var showDialog by remember { mutableStateOf(false) }
 
     Column(
@@ -41,7 +41,7 @@ fun DialogsShowcase() {
         Button(onClick = { showDialog = true }) {
             Text("Show Alert Dialog")
         }
-        BasicAlertDialog(
+        EZAlertDialog(
             showDialog = showDialog,
             onDismiss = { showDialog = false },
             onConfirm = { showDialog = false },

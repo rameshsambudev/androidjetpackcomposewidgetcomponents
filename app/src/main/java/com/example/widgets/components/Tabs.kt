@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun TabRowComponent(modifier: Modifier = Modifier) {
+fun EZTabRow(modifier: Modifier = Modifier) {
     var selectedTab by remember { mutableIntStateOf(0) }
     val tabs = listOf("Home", "Favorites", "Profile")
     val icons = listOf(Icons.Filled.Home, Icons.Filled.Favorite, Icons.Filled.Person)
@@ -34,12 +34,12 @@ fun TabRowComponent(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TabsShowcase() {
+fun EZTabsShowcase() {
     Column(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Tabs", style = MaterialTheme.typography.titleLarge)
-        TabRowComponent()
+        EZTabRow()
     }
 }

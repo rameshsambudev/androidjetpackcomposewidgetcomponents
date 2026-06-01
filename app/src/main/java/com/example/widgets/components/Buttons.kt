@@ -9,53 +9,53 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun PrimaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun EZPrimaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Button(onClick = onClick, modifier = modifier) {
         Text(text)
     }
 }
 
 @Composable
-fun SecondaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun EZSecondaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     OutlinedButton(onClick = onClick, modifier = modifier) {
         Text(text)
     }
 }
 
 @Composable
-fun TertiaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun EZTertiaryButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     TextButton(onClick = onClick, modifier = modifier) {
         Text(text)
     }
 }
 
 @Composable
-fun IconButtonComponent(onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun EZIconButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(Icons.Filled.Favorite, contentDescription = "Favorite")
     }
 }
 
 @Composable
-fun FloatingActionButtonComponent(onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun EZFloatingActionButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
     FloatingActionButton(onClick = onClick, modifier = modifier) {
         Icon(Icons.Filled.Favorite, contentDescription = "Add")
     }
 }
 
 @Composable
-fun ButtonsShowcase() {
+fun EZButtonsShowcase() {
     Column(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Buttons", style = MaterialTheme.typography.titleLarge)
-        PrimaryButton(text = "Primary Button", onClick = {})
-        SecondaryButton(text = "Outlined Button", onClick = {})
-        TertiaryButton(text = "Text Button", onClick = {})
+        EZPrimaryButton(text = "Primary Button", onClick = {})
+        EZSecondaryButton(text = "Outlined Button", onClick = {})
+        EZTertiaryButton(text = "Text Button", onClick = {})
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            IconButtonComponent(onClick = {})
-            FloatingActionButtonComponent(onClick = {})
+            EZIconButton(onClick = {})
+            EZFloatingActionButton(onClick = {})
         }
     }
 }

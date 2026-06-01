@@ -9,11 +9,11 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 
-data class NavItem(val label: String, val icon: @Composable () -> Unit)
+data class EZNavItem(val label: String, val icon: @Composable () -> Unit)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarComponent(title: String, modifier: Modifier = Modifier) {
+fun EZTopAppBar(title: String, modifier: Modifier = Modifier) {
     TopAppBar(
         title = { Text(title) },
         modifier = modifier
@@ -21,7 +21,7 @@ fun TopAppBarComponent(title: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun BottomNavBarComponent(modifier: Modifier = Modifier) {
+fun EZBottomNavBar(modifier: Modifier = Modifier) {
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf("Home", "Search", "Profile", "Settings")
     val icons = listOf(Icons.Filled.Home, Icons.Filled.Search, Icons.Filled.Person, Icons.Filled.Settings)
@@ -40,7 +40,7 @@ fun BottomNavBarComponent(modifier: Modifier = Modifier) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NavBarShowcase() {
+fun EZNavBarShowcase() {
     TopAppBar(title = { Text("Navigation Bars") })
-    BottomNavBarComponent()
+    EZBottomNavBar()
 }

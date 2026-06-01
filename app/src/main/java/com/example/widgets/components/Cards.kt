@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BasicCard(title: String, description: String, modifier: Modifier = Modifier) {
+fun EZBasicCard(title: String, description: String, modifier: Modifier = Modifier) {
     Card(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
@@ -18,7 +18,7 @@ fun BasicCard(title: String, description: String, modifier: Modifier = Modifier)
 }
 
 @Composable
-fun ElevatedCardComponent(title: String, description: String, modifier: Modifier = Modifier) {
+fun EZElevatedCard(title: String, description: String, modifier: Modifier = Modifier) {
     ElevatedCard(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
@@ -29,7 +29,7 @@ fun ElevatedCardComponent(title: String, description: String, modifier: Modifier
 }
 
 @Composable
-fun OutlinedCardComponent(title: String, description: String, modifier: Modifier = Modifier) {
+fun EZOutlinedCard(title: String, description: String, modifier: Modifier = Modifier) {
     OutlinedCard(modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
@@ -40,14 +40,14 @@ fun OutlinedCardComponent(title: String, description: String, modifier: Modifier
 }
 
 @Composable
-fun CardsShowcase() {
+fun EZCardsShowcase() {
     Column(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Cards", style = MaterialTheme.typography.titleLarge)
-        BasicCard(title = "Basic Card", description = "This is a basic filled card.")
-        ElevatedCardComponent(title = "Elevated Card", description = "This card has elevation.")
-        OutlinedCardComponent(title = "Outlined Card", description = "This card has an outline border.")
+        EZBasicCard(title = "Basic Card", description = "This is a basic filled card.")
+        EZElevatedCard(title = "Elevated Card", description = "This card has elevation.")
+        EZOutlinedCard(title = "Outlined Card", description = "This card has an outline border.")
     }
 }

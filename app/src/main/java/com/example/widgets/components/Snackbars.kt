@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 
 @Composable
-fun SnackbarShowcase() {
+fun EZSnackbarShowcase() {
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 

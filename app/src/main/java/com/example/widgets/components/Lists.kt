@@ -12,10 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-data class ListItemData(val title: String, val subtitle: String)
+data class EZListItemData(val title: String, val subtitle: String)
 
 @Composable
-fun SimpleListItem(item: ListItemData, onClick: () -> Unit = {}) {
+fun EZSimpleListItem(item: EZListItemData, onClick: () -> Unit = {}) {
     ListItem(
         headlineContent = { Text(item.title) },
         supportingContent = { Text(item.subtitle) },
@@ -25,28 +25,28 @@ fun SimpleListItem(item: ListItemData, onClick: () -> Unit = {}) {
 }
 
 @Composable
-fun SimpleList(items: List<ListItemData>, onItemClick: (ListItemData) -> Unit = {}) {
+fun EZSimpleList(items: List<EZListItemData>, onItemClick: (EZListItemData) -> Unit = {}) {
     LazyColumn {
         items(items) { item ->
-            SimpleListItem(item = item, onClick = { onItemClick(item) })
+            EZSimpleListItem(item = item, onClick = { onItemClick(item) })
             HorizontalDivider()
         }
     }
 }
 
 @Composable
-fun ListsShowcase() {
+fun EZListsShowcase() {
     val sampleItems = listOf(
-        ListItemData("Alice Johnson", "Software Engineer"),
-        ListItemData("Bob Smith", "Product Manager"),
-        ListItemData("Carol White", "UX Designer"),
-        ListItemData("David Brown", "Data Scientist"),
-        ListItemData("Eve Davis", "DevOps Engineer")
+        EZListItemData("Alice Johnson", "Software Engineer"),
+        EZListItemData("Bob Smith", "Product Manager"),
+        EZListItemData("Carol White", "UX Designer"),
+        EZListItemData("David Brown", "Data Scientist"),
+        EZListItemData("Eve Davis", "DevOps Engineer")
     )
 
     Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
         Text("Lists", style = MaterialTheme.typography.titleLarge)
         Spacer(modifier = Modifier.height(8.dp))
-        SimpleList(items = sampleItems)
+        EZSimpleList(items = sampleItems)
     }
 }

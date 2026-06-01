@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DropdownMenuComponent(
+fun EZDropdownMenu(
     options: List<String>,
     selectedOption: String,
     onOptionSelected: (String) -> Unit,
@@ -40,7 +40,7 @@ fun DropdownMenuComponent(
 }
 
 @Composable
-fun DropdownsShowcase() {
+fun EZDropdownsShowcase() {
     var selected by remember { mutableStateOf("Kotlin") }
     val languages = listOf("Kotlin", "Java", "Swift", "Dart", "TypeScript")
 
@@ -49,7 +49,7 @@ fun DropdownsShowcase() {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Dropdowns", style = MaterialTheme.typography.titleLarge)
-        DropdownMenuComponent(
+        EZDropdownMenu(
             options = languages,
             selectedOption = selected,
             onOptionSelected = { selected = it },

@@ -10,24 +10,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BadgedIconComponent(count: Int, icon: @Composable () -> Unit) {
+fun EZBadgedIcon(count: Int, icon: @Composable () -> Unit) {
     BadgedBox(badge = { Badge { Text("$count") } }) {
         icon()
     }
 }
 
 @Composable
-fun BadgesShowcase() {
+fun EZBadgesShowcase() {
     Column(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text("Badges", style = MaterialTheme.typography.titleLarge)
         Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
-            BadgedIconComponent(count = 5) {
+            EZBadgedIcon(count = 5) {
                 Icon(Icons.Filled.Email, contentDescription = "Email")
             }
-            BadgedIconComponent(count = 12) {
+            EZBadgedIcon(count = 12) {
                 Icon(Icons.Filled.Notifications, contentDescription = "Notifications")
             }
         }

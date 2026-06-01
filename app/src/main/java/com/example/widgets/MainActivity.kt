@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WidgetsTheme {
-                WidgetsCatalogApp()
+                EZWidgetsCatalogApp()
             }
         }
     }
@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WidgetsCatalogApp() {
+fun EZWidgetsCatalogApp() {
     var selectedSection by remember { mutableIntStateOf(0) }
 
     val sections = listOf(
@@ -40,10 +40,10 @@ fun WidgetsCatalogApp() {
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Compose Widgets Catalog") })
+            TopAppBar(title = { Text("EZ Compose Widgets Catalog") })
         },
         bottomBar = {
-            BottomNavBarComponent()
+            EZBottomNavBar()
         }
     ) { padding ->
         Row(modifier = Modifier.padding(padding).fillMaxSize()) {
@@ -63,21 +63,21 @@ fun WidgetsCatalogApp() {
                     .verticalScroll(rememberScrollState())
             ) {
                 when (selectedSection) {
-                    0 -> ButtonsShowcase()
-                    1 -> TextFieldsShowcase()
-                    2 -> ListsShowcase()
-                    3 -> CardsShowcase()
-                    4 -> SwitchesShowcase()
-                    5 -> ChipsShowcase()
-                    6 -> SlidersShowcase()
-                    7 -> TabsShowcase()
-                    8 -> DialogsShowcase()
-                    9 -> SnackbarShowcase()
-                    10 -> BottomSheetShowcase()
-                    11 -> ProgressIndicatorsShowcase()
-                    12 -> BadgesShowcase()
-                    13 -> DropdownsShowcase()
-                    14 -> NavBarShowcase()
+                    0 -> EZButtonsShowcase()
+                    1 -> EZTextFieldsShowcase()
+                    2 -> EZListsShowcase()
+                    3 -> EZCardsShowcase()
+                    4 -> EZSwitchesShowcase()
+                    5 -> EZChipsShowcase()
+                    6 -> EZSlidersShowcase()
+                    7 -> EZTabsShowcase()
+                    8 -> EZDialogsShowcase()
+                    9 -> EZSnackbarShowcase()
+                    10 -> EZBottomSheetShowcase()
+                    11 -> EZProgressIndicatorsShowcase()
+                    12 -> EZBadgesShowcase()
+                    13 -> EZDropdownsShowcase()
+                    14 -> EZNavBarShowcase()
                 }
             }
         }

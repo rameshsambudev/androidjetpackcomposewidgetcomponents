@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SwitchComponent(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+fun EZSwitch(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -20,7 +20,7 @@ fun SwitchComponent(label: String, checked: Boolean, onCheckedChange: (Boolean) 
 }
 
 @Composable
-fun CheckboxComponent(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+fun EZCheckbox(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Checkbox(checked = checked, onCheckedChange = onCheckedChange)
         Text(label)
@@ -28,7 +28,7 @@ fun CheckboxComponent(label: String, checked: Boolean, onCheckedChange: (Boolean
 }
 
 @Composable
-fun RadioButtonGroupComponent(
+fun EZRadioButtonGroup(
     options: List<String>,
     selectedOption: String,
     onOptionSelected: (String) -> Unit
@@ -47,7 +47,7 @@ fun RadioButtonGroupComponent(
 }
 
 @Composable
-fun SwitchesShowcase() {
+fun EZSwitchesShowcase() {
     var switch1 by remember { mutableStateOf(true) }
     var switch2 by remember { mutableStateOf(false) }
     var check1 by remember { mutableStateOf(true) }
@@ -61,15 +61,15 @@ fun SwitchesShowcase() {
         Text("Switches & Selection", style = MaterialTheme.typography.titleLarge)
 
         Text("Switches", style = MaterialTheme.typography.titleSmall)
-        SwitchComponent("Wi-Fi", switch1) { switch1 = it }
-        SwitchComponent("Bluetooth", switch2) { switch2 = it }
+        EZSwitch("Wi-Fi", switch1) { switch1 = it }
+        EZSwitch("Bluetooth", switch2) { switch2 = it }
 
         Text("Checkboxes", style = MaterialTheme.typography.titleSmall)
-        CheckboxComponent("Accept Terms", check1) { check1 = it }
-        CheckboxComponent("Subscribe to Newsletter", check2) { check2 = it }
+        EZCheckbox("Accept Terms", check1) { check1 = it }
+        EZCheckbox("Subscribe to Newsletter", check2) { check2 = it }
 
         Text("Radio Buttons", style = MaterialTheme.typography.titleSmall)
-        RadioButtonGroupComponent(
+        EZRadioButtonGroup(
             options = listOf("Option A", "Option B", "Option C"),
             selectedOption = selectedRadio,
             onOptionSelected = { selectedRadio = it }

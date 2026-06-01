@@ -13,7 +13,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BasicTextField(
+fun EZBasicTextField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
@@ -28,7 +28,7 @@ fun BasicTextField(
 }
 
 @Composable
-fun OutlinedTextFieldComponent(
+fun EZOutlinedTextField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
@@ -43,7 +43,7 @@ fun OutlinedTextFieldComponent(
 }
 
 @Composable
-fun PasswordTextField(
+fun EZPasswordTextField(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -60,7 +60,7 @@ fun PasswordTextField(
 }
 
 @Composable
-fun EmailTextField(
+fun EZEmailTextField(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -76,7 +76,7 @@ fun EmailTextField(
 }
 
 @Composable
-fun TextFieldsShowcase() {
+fun EZTextFieldsShowcase() {
     var basic by remember { mutableStateOf("") }
     var outlined by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -87,9 +87,9 @@ fun TextFieldsShowcase() {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text("Text Fields", style = MaterialTheme.typography.titleLarge)
-        BasicTextField(value = basic, onValueChange = { basic = it }, label = "Basic TextField")
-        OutlinedTextFieldComponent(value = outlined, onValueChange = { outlined = it }, label = "Outlined TextField")
-        PasswordTextField(value = password, onValueChange = { password = it })
-        EmailTextField(value = email, onValueChange = { email = it })
+        EZBasicTextField(value = basic, onValueChange = { basic = it }, label = "Basic TextField")
+        EZOutlinedTextField(value = outlined, onValueChange = { outlined = it }, label = "Outlined TextField")
+        EZPasswordTextField(value = password, onValueChange = { password = it })
+        EZEmailTextField(value = email, onValueChange = { email = it })
     }
 }

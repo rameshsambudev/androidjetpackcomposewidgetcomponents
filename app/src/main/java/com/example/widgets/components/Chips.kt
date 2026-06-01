@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FilterChipComponent(label: String, selected: Boolean, onSelected: (Boolean) -> Unit) {
+fun EZFilterChip(label: String, selected: Boolean, onSelected: (Boolean) -> Unit) {
     FilterChip(
         selected = selected,
         onClick = { onSelected(!selected) },
@@ -23,7 +23,7 @@ fun FilterChipComponent(label: String, selected: Boolean, onSelected: (Boolean) 
 }
 
 @Composable
-fun InputChipComponent(label: String, onDismiss: () -> Unit) {
+fun EZInputChip(label: String, onDismiss: () -> Unit) {
     InputChip(
         selected = false,
         onClick = {},
@@ -38,7 +38,7 @@ fun InputChipComponent(label: String, onDismiss: () -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChipsShowcase() {
+fun EZChipsShowcase() {
     var filter1 by remember { mutableStateOf(false) }
     var filter2 by remember { mutableStateOf(true) }
     var filter3 by remember { mutableStateOf(false) }
@@ -52,15 +52,15 @@ fun ChipsShowcase() {
 
         Text("Filter Chips", style = MaterialTheme.typography.titleSmall)
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            FilterChipComponent("Option 1", filter1) { filter1 = it }
-            FilterChipComponent("Option 2", filter2) { filter2 = it }
-            FilterChipComponent("Option 3", filter3) { filter3 = it }
+            EZFilterChip("Option 1", filter1) { filter1 = it }
+            EZFilterChip("Option 2", filter2) { filter2 = it }
+            EZFilterChip("Option 3", filter3) { filter3 = it }
         }
 
         Text("Input Chips", style = MaterialTheme.typography.titleSmall)
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             chips.forEach { chip ->
-                InputChipComponent(label = chip, onDismiss = { chips = chips - chip })
+                EZInputChip(label = chip, onDismiss = { chips = chips - chip })
             }
         }
     }
